@@ -1,47 +1,32 @@
-class Product
+class Person
 {
-    int productId;
-    String productName;
-    double price;
-    static int count;
-    Product()
+    String firstName;
+    String lastName;
+    int age;;
+    public Person()
     {
-        productName=null;
+        firstName = "";
+        lastName = "";
+        age = 0;
     }
-    Product(int productId,String productName,double price)
+    public Person(String firstName,String lastName,int age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    public String getFullName(){
+    return firstName + " " + lastName;
+    }
+    }
+    public class Practical1
     {
-        this.productId=productId;
-        this.productName=productName;
-        this.price=price;
-        count++;
-    }
-    double discount(double Price,double Discount)
-    {
-        return ((100-Discount)/100)*Price;
-    }
-    void displayProductInfo()
-    {
-        System.out.println("ProducrId : "+productId);
-        System.out.println("ProductName : "+productName);
-        System.out.println("Product Price : "+price);
-    }
-}
-public class Practical2 
-{
     public static void main(String[] args)
     {
-        Product product1=new Product(101,"Laptop",999.99);
-        Product product2=new Product(202,"Smart Phone",499.95);
-        Product product3=new Product(303,"Tablet",299.50);
-        Product calcDiscount=new Product();
-
-        product1.displayProductInfo();
-        product2.displayProductInfo();
-        product3.displayProductInfo();
-
-        double DiscountedPrice=calcDiscount.discount(product1.price,10);
-        System.out.println("Discounted Price :"+DiscountedPrice);
-        System.out.println(Product.count);
+    Person person1 = new Person("John","Doe",30);
+    Person person2 = new Person("Alice","Smith",25);
+    System.out.println("Person1: " + person1.getFullName());
+    System.out.println("Person2: " + person2.getFullName());
+    double averageAge = (person1.age + person2.age)/2.0;
+    System.out.println("Average age: " + averageAge);
+        }
     }
-}
-
